@@ -1,5 +1,5 @@
 import "./globals.css";
-import { unstable_getServerSession } from "next-auth/next";
+import { getServerSession } from "next-auth/next";
 import { getProviders } from "next-auth/react";
 import Login from "components/Login";
 import Navbar from "components/Navbar";
@@ -17,7 +17,7 @@ export default async function RootLayout({
 }: {
     children: React.ReactNode;
 }) {
-    const session = await unstable_getServerSession();
+    const session = await getServerSession();
     const providers = await getProviders();
     console.log(session);
 
@@ -36,9 +36,15 @@ export default async function RootLayout({
                 <div className="fixed w-screen bg-white dark:bg-[#05091a] z-10">
                     <Navbar session={session} />
                 </div>
+                <div className="h-screen">
                 {children}
+                
+                </div>
+                <div className="w-screen  bg-white dark:bg-[#05091a] z-10">
+                <Footer />
+                </div>
             </body>
-            <Footer />
+           
         </html>
     );
 }
