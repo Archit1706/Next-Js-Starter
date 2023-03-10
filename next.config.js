@@ -1,17 +1,11 @@
 /** @type {import('next').NextConfig} */
-const withPWA = require("next-pwa")({
-  dest: "public",
-  register: true,
-  skipWaiting: true,
-});
-module.exports = withPWA({
+const nextConfig = {
   experimental: {
     appDir: true,
   },
   images: {
-    domains: ["miro.medium.com"],
+    domains: ["dummyimage.com", "mf.b37mrtl.ru", "cdnn1.img.sputniknews.com"],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-});
+};
+
+module.exports = nextConfig;
