@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { FaFacebook } from "react-icons/fa";
 import { BsLinkedin, BsTwitter, BsGithub } from "react-icons/bs";
+import { name } from "../staticProducts";
 
 type Props = {};
 
@@ -14,7 +15,7 @@ const Footer = (props: Props) => {
                         <Link href="/" className="flex items-center">
                             {/* <img src={""} className="h-8 mr-3" alt="Logo" /> */}
                             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                                Reflections
+                                ${name}
                             </span>
                         </Link>
                     </div>
@@ -36,7 +37,7 @@ const Footer = (props: Props) => {
                     <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                         © 2023{" "}
                         <Link href="/" className="hover:underline">
-                            Reflections™
+                            ${name}™
                         </Link>
                         . All Rights Reserved.
                     </span>

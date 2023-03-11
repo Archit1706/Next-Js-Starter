@@ -17,6 +17,7 @@ import yogurt from "./assets/products/yogurt.jpeg"
 import peanutButter from "./assets/products/peanutButter.jpeg"
 import oranges from "./assets/products/oranges.jpeg"
 
+const name = "CouponMint"
 const prods = [
     {
         id: 1,
@@ -188,4 +189,4 @@ const prods = [
     },
 ]
 
-export { prods }
+export { prods, name }

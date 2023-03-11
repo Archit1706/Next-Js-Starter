@@ -5,6 +5,7 @@ import React from "react";
 import { useForm, SubmitHandler, LiteralUnion } from "react-hook-form";
 import { BsGithub } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
+import { name } from "../staticProducts";
 type Props = {
     providers: Record<
         LiteralUnion<BuiltInProviderType, string>,
@@ -40,7 +41,7 @@ const Login = ({ providers }: Props) => {
                 <div className=" flex rounded-2xl pt-10 w-full px-8 md:px-20 items-center">
                     <div className="md:w-1/2 px-2 md:px-2 ">
                         <h1 className="text-4xl antialiased font-bold dark:text-white">
-                            Welcome to Reflections
+                            Welcome to ${name}
                         </h1>
                         <h2 className="font-bold text-2xl text-[#126eff] dark:text-[#e5ff12]">
                             Fast Login

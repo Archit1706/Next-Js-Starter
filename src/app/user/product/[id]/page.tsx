@@ -1,13 +1,23 @@
 "use client";
 import React from "react";
-import { useRouter } from "next/router";
-import { prods } from "../../../../staticProducts";
+// import { useRouter } from "next/navigation";
+import { prods } from "../../../../../staticProducts";
 
-const page = () => {
-    const router = useRouter();
-    const { pid } = router.query;
-    const product = prods.find((prod) => prod.id === pid);
+const page = ({ params }: any) => {
+    const { id } = params["id"];
+    console.log(id);
+    // console.log(prods);
+    const product = prods.find((prod) => prod.id === id);
+    // console.log(product, id);
 
+    // const product = {
+    //     id: "1",
+    //     name: "The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback",
+    //     price: 11.96,
+    //     description: "",
+    //     category: "Category",
+    //     image: "",
+    // };
     return (
         <section className="text-gray-600 body-font overflow-hidden">
             <div className="container px-5 py-24 mx-auto">

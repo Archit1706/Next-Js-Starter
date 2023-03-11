@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
+// import router from "next/router";
 import React from "react";
-import { prods } from "../../../staticProducts";
-
-const page = () => {
+import { prods } from "../../../../staticProducts";
+type Props = {};
+const page = (props: Props) => {
     return (
         <>
             <section className="text-gray-600 body-font">
@@ -15,9 +16,12 @@ const page = () => {
                                 <div
                                     key={prod.id}
                                     className="lg:w-1/4 md:w-1/2 p-4 w-full"
+                                    // onClick={() =>
+                                    // router.push(`/user/product/${prod?.id}`)
+                                    // }
                                 >
-                                    <a
-                                        href={`/product/${prod.id}`}
+                                    <Link
+                                        href={`/user/product/${prod.id}`}
                                         className="block relative h-48 rounded overflow-hidden"
                                     >
                                         <img
@@ -25,7 +29,7 @@ const page = () => {
                                             className="object-cover object-center w-full h-full block"
                                             src={prod.image.src}
                                         />
-                                    </a>
+                                    </Link>
                                     <div className="mt-4">
                                         <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1 uppercase">
                                             {prod.category}
