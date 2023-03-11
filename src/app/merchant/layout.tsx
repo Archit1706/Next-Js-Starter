@@ -25,15 +25,18 @@ export default function Layout({ children }) {
           setUserEmail(usrEmail);
         }
         
-        if (path.includes("users")) {
+        if (path.includes("customers")) {
           setActive(3);
         }
     
         if (path.includes("campains")) {
           setActive(2);
         }
-        if (path.includes("vouchers")) {
+        if (path.includes("Coupons")) {
           setActive(1);
+        }
+        if (path.includes("Coupons")) {
+          setActive(4);
         }
       }, []);
     
@@ -42,7 +45,6 @@ export default function Layout({ children }) {
   return (
     <>
  <div className="max-w-full max-h-full mx-10 flex flex-row justify-center  pt-16">
-     
 
       <div className="mt-12  border-gray-200 dark:border-gray-700 ">
         <ul className="flex  mr-8 text-sm font-medium flex-col text-gray-500 text-start  dark:text-gray-400">
@@ -57,7 +59,7 @@ export default function Layout({ children }) {
               }`}
             >
             
-              <span>Vouchers</span>
+              <span>Coupons</span>
             </Link>
           </li>
           <li className="">
@@ -77,7 +79,7 @@ export default function Layout({ children }) {
           <li className="">
             <Link
               onClick={() => setActive(3)}
-              href="/merchant/users"
+              href="/merchant/customers"
               className={`inline-flex p-4 border-b-2 rounded-t-lg group ${
                 active == 3
                   ? activeStyle
@@ -85,7 +87,7 @@ export default function Layout({ children }) {
               }`}
               aria-current="page"
             >
-             Users
+             Customers
             </Link>
           </li>
         </ul>
